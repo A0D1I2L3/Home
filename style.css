@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.top-container {
+  background-color: #22a699;
+  padding-top: 200px;
+  margin: 0px;
+}
+
+.top-container {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  color: white;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  color: #f2be22;
+  text-align: center;
+  font-size: 6rem;
+  text-shadow: 3px 3px #f24c3d;
+}
+span {
+  text-decoration: underline;
+}
