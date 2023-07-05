@@ -4,18 +4,31 @@
 }
 
 .top-container {
-  background-color: #22a699;
-  padding-top: 150px;
+  background-color: #22a699a4;
+  padding-top: 400px;
   margin: 0px;
-}
-
-.top-container {
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 2rem;
   color: white;
 }
 
+.airplane {
+  position: absolute;
+  top: 100px;
+  right: 200px;
+  rotate: 15deg;
+}
+.cloud-1 {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+}
+.cloud-2 {
+  position: absolute;
+  top: 100px;
+  right: 500px;
+}
 h1 {
   font-family: "Roboto", sans-serif;
   color: #f2be22;
@@ -25,4 +38,7 @@ h1 {
 }
 span {
   text-decoration: underline;
+}
+p {
+  padding-bottom: 20px;
 }
