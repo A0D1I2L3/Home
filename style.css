@@ -49,11 +49,17 @@ span {
   color: #66bfbf;
   font-size: 7rem;
 }
-h2 {
-  font-family: "Roboto", sans-serif;
-  color: #66bfbf;
-  font-size: 2rem;
-  padding: 30px;
+
+.mid-container {
+  background-color: #66bfbfb9;
+}
+.mid-container h2,
+.mid-container > p {
+  font-size: 3.5rem;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 .flexbox {
@@ -75,8 +81,13 @@ h2 {
   transition: transform 1000ms;
   transform-style: preserve-3d;
   width: 100px;
+  font-size: 1.5rem;
+  text-align: center;
+
   background-color: #66bfbf;
-  height: 150px;
+  font-weight: normal;
+
+  height: 100px;
   width: 150px;
   border-radius: 25px;
   padding: 30px;
