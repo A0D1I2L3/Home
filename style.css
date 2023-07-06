@@ -5,7 +5,7 @@
 
 .top-container {
   background-color: #22a699a4;
-  padding-top: 400px;
+  padding-top: 300px;
   margin: 0px;
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -63,7 +63,7 @@ span {
 }
 
 .mid-container > p {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 .flexbox {
   display: flex;
