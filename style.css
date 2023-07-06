@@ -39,6 +39,61 @@ h1 {
 span {
   text-decoration: underline;
 }
-p {
+.top-container p {
   padding-bottom: 20px;
+}
+
+.mid-container {
+  text-align: center;
+  background-color: #22a69900;
+  color: #66bfbf;
+  font-size: 7rem;
+}
+h2 {
+  font-family: "Roboto", sans-serif;
+  color: #66bfbf;
+  font-size: 2rem;
+  padding: 30px;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 1.5rem;
+}
+.container {
+  perspective: 1000px;
+}
+.container:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  position: relative;
+  text-align: center;
+  transition: transform 1000ms;
+  transform-style: preserve-3d;
+  width: 100px;
+  background-color: #66bfbf;
+  height: 150px;
+  width: 150px;
+  border-radius: 25px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+}
+.front {
+  width: 100px;
+}
+.back {
+  border-radius: 25px;
+  transform: rotateY(180deg);
+  color: white;
 }
