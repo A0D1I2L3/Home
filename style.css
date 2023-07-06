@@ -48,6 +48,7 @@ span {
   background-color: #66bfbfc2;
   color: #66bfbf;
   font-size: 7rem;
+  min-height: 100vh;
 }
 
 .mid-container > h2,
@@ -64,6 +65,7 @@ span {
   flex-direction: row;
   justify-content: space-around;
   font-size: 1.5rem;
+  min-height: 100vh;
 }
 .container {
   perspective: 1000px;
