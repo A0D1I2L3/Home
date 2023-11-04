@@ -6,7 +6,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow: hidden;
 }
 .top-container {
   background-color: #22a699a4;
