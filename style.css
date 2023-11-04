@@ -113,9 +113,7 @@ span {
   color: white;
 }
 @media (max-width: 700px) {
-  body {
-    overflow: visible;
-  }
+  
   .flexbox {
     display: flex;
     flex-direction: column;
