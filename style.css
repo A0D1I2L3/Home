@@ -1,153 +1,168 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --bg-color: black;
+  --second-bg-color: #131313;
+  --main-color: #41b06e;
+  --text-color: white;
+}
+html {
+  font-size: 60%;
+  overflow-x: hidden;
 }
 body {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 4rem 12% 4rem;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+.logo {
+  font-size: 3rem;
+  color: var(--text-color);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3ms ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+.logo span {
+  text-shadow: 0 0 25px var(--main-color);
+}
+.normal-text {
+  color: white;
+  text-shadow: none;
+}
+.navbar a {
+  font-size: 1.8rem;
+  margin-left: 4rem;
+  color: var(--text-color);
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+}
+
 .top-container {
-  background-color: #22a699a4;
   padding-top: 300px;
   margin: 0px;
   text-align: center;
-  font-family: "Poppins", sans-serif;
   font-size: 2rem;
   color: white;
 }
 
-.airplane {
-  position: absolute;
-  top: 100px;
-  right: 200px;
-  rotate: 15deg;
-}
-.cloud-1 {
-  position: absolute;
-  top: 200px;
-  left: 200px;
-}
-.cloud-2 {
-  position: absolute;
-  top: 100px;
-  right: 500px;
-}
 h1 {
   font-family: "Roboto", sans-serif;
-  color: #f2be22;
+  color: #8decb4;
   text-align: center;
   font-size: 6rem;
-  text-shadow: 3px 3px #f24c3d;
 }
-span {
-  text-decoration: underline;
+h3 {
+  text-shadow: 0 0px 5px var(--main-color);
 }
-.top-container p {
-  padding-bottom: 20px;
-}
-
-.mid-container {
-  flex: 1 0;
-  text-align: center;
-  background-color: #66bfbfc2;
-  color: #66bfbf;
-  font-size: 7rem;
-  height: 100vh;
+.text-animation {
+  font-family: "Poppins";
+  font-size: 34px;
+  font-weight: 600;
+  min-width: 280px;
+  padding-top: 25px;
 }
 
-.mid-container > h2,
-.mid-container > p {
-  font-size: 3.5rem;
-  color: #ffffff;
-  font-family: "Poppins", sans-serif;
-  padding-top: 30px;
-  padding-bottom: 20px;
-}
-
-.flexbox {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  font-size: 1.5rem;
-  min-height: 100vh;
-}
-.container {
-  perspective: 1000px;
-}
-.container:hover .card {
-  transform: rotateY(180deg);
-}
-
-.card {
+.text-animation span {
   position: relative;
-  text-align: center;
-  transition: transform 1000ms;
-  transform-style: preserve-3d;
-  width: 100px;
-  font-size: 1.5rem;
-  text-align: center;
-
-  background-color: #66bfbf;
-  font-weight: normal;
-
-  height: 100px;
-  width: 150px;
-  border-radius: 25px;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.front,
-.back {
-  backface-visibility: hidden;
-  position: absolute;
-}
-.front {
-  width: 100px;
-}
-.back {
-  border-radius: 25px;
-  transform: rotateY(180deg);
-  color: white;
-}
-@media (max-width: 700px) {
+  text-align: left;
   
-  .flexbox {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    font-size: 1rem;
-  }
+}
 
-  .card {
-    margin: 10px;
+.text-animation span::before {
+  content: "Web Developer";
+  color: var(--main-color);
+  animation: words 20s infinite;
+}
+
+.text-animation span::after {
+  content: "";
+  background-color: var(--bg-color);
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid var(--bg-color);
+  right: -8px;
+  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid var(--main-color);
   }
-  .airplane {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    rotate: 15deg;
+}
+
+@keyframes words {
+  0%,
+  20% {
+    content: "FullStack Dev";
   }
-  .cloud-1 {
-    position: absolute;
-    top: 200px;
-    left: 100px;
+  21%,
+  40% {
+    content: "Web Designer";
   }
-  .cloud-2 {
-    position: absolute;
-    top: 150px;
-    right: 150px;
+  41%,
+  60% {
+    content: "Pen Tester";
   }
-  h1 {
-    font-size: 4rem;
+  61%,
+  80% {
+    content: "Web Developer";
   }
-  p {
-    font-size: 1.3rem;
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  20%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
   }
-  .mid-container > h2 {
-    font-size: 3rem;
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
   }
 }
