@@ -9,37 +9,91 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Quicksand:wght@300&family=Roboto:wght@700&display=swap"
       rel="stylesheet" />
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet" />
 
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header class="header">
-
+      <a href="" class="important"></a>
       <i class="bx bx-menu" id="menu-icon"></i>
       <nav class="navbar">
         <a href="#home" class="active">Home</a>
-        <a href="#projects">Projects</a>
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
-    <section class="home" id="home">
-      <div class="top-container">
-    <div class="para-container">      
-        <h1><span class="normal-text">Hi It's </span>Adil Haneef</h1></p>
-        
-          <h3 class="text-animation">I'm a <span>
-          </span>
 
-          </h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus numquam dolor nostrum illum ut eum praesentium neque, molestias aut corrupti. Voluptatibus tempora consequuntur deleniti molestias mollitia ullam dolores culpa aliquam.</p>
+    <section class="home" id="home">
+      <div class="home-content">
+        <h1>Hi, It's <span>Adil Haneef</span></h1>
+        <h3 class="text-animation">I'm a <span></span></h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+          numquam dolor nostrum illum ut eum praesentium neque, molestias aut
+          corrupti. Voluptatibus tempora consequuntur deleniti molestias
+          mollitia ullam dolores culpa aliquam.
+        </p>
+
+        <div class="social-icons">
+          <a
+            href="https://www.linkedin.com/in/adil-haneef-666957290/"
+            target="_blank"
+            ><i class="bx bxl-linkedin-square"></i
+          ></a>
+          <a href="https://github.com/A0D1I2L3" target="_blank"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a href="https://leetcode.com/u/A0D1I2L3/" target="_blank"
+            ><i class="bx bx-code-alt"></i
+          ></a>
+          <a href="https://play.picoctf.org/users/A0D1I2L3" target="_blank"
+            ><i class="bx bx-bug-alt"></i
+          ></a>
         </div>
-          <img src="photo.jpeg" class="round-photo">
+        <div class="btn-group">
+          <a href="" class="btn">Hire</a>
+          <a href="#contact" class="btn">Contact</a>
         </div>
+      </div>
+      <div class="home-img">
+        <img src="assets/photo.jpeg" />
+      </div>
     </section>
-   
+
+    <section class="resume" id="resume">
+      <h2 class="heading">My <span>Resume</span></h2>
+      <p>Download my resume to learn more about my experience and skills:</p>
+      <a href="assets/Resume.pdf" class="btn" download
+        >Download Resume</a
+      >
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me</span></h2>
+      <form action="">
+        <div class="input-group">
+          <div class="input-box">
+            <input type="text" placeholder="Full Name" />
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="input-box">
+            <input type="number" placeholder="Phone Number" />
+            <input type="text" placeholder="Subject" />
+          </div>
+        </div>
+        <div class="input-group-2">
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Your Message"></textarea>
+          <input type="submit" value="Send Message" class="btn" />
+        </div>
+      </form>
+    </section>
   </body>
 </html>
