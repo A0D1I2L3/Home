@@ -202,7 +202,7 @@ span {
 }
 
 .text-animation span:before {
-  content: "Web Developer";
+  content: "FullStack Dev";
   color: var(--main-color);
   animation: words 20s infinite;
 }
@@ -241,13 +241,26 @@ span {
   80% {
     content: "Web Developer";
   }
+  81%,
+  100% {
+    content: "UI/UX Designer";
+  }
 }
 
 @keyframes typing {
-  0%,
-  100% {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
     width: 0;
   }
+
   5%,
   20%,
   25%,
@@ -384,10 +397,8 @@ h2 {
   .home {
     flex-direction: column-reverse;
     margin: 5rem 4rem;
-    
   }
   .home-content h3 {
-    
     font-size: 2.8rem;
   }
   .home-content h1 {
