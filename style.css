@@ -385,12 +385,14 @@ h2 {
     display: none;
   }
 
-  .navbar {
-    position: fixed;
-    left: 10%;
-    width: 80%;
-    right: 10%;
+  .home {
+    margin: 5rem 2rem;
+  }
 
+  .navbar {
+    left: 0;
+    right: 0;
+    width: 100%;
     text-align: center;
   }
 
