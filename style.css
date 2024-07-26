@@ -372,7 +372,7 @@ h2 {
 }
 .navbar {
   display: flex;
-  justify-content: space-between; /* Center align elements on large screens */
+  justify-content: space-between; 
 }
 @media (max-width: 1285px) {
   html {
