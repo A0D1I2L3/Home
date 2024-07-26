@@ -369,9 +369,6 @@ h2 {
   section {
     padding: 10rem 3% 2rem;
   }
-  .contact form {
-    flex-direction: column;
-  }
 }
 @media (max-width: 1285px) {
   html {
@@ -414,7 +411,10 @@ h2 {
   .home-img img {
     width: 56vw;
   }
-  .contact {
-    max-width: 450px;
+  .contact,
+  .contact form {
+    flex-direction: column;
+    max-width: 480px;
+    text-align: center;
   }
 }
