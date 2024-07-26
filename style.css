@@ -372,7 +372,7 @@ h2 {
 }
 .navbar {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 @media (max-width: 1285px) {
   html {
@@ -429,4 +429,16 @@ h2 {
     max-width: 95%;
     text-align: center;
   }
+}
+
+.alert {
+  display: none; /* Hide by default */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 0.25rem;
+  text-align: center;
+  font-size: 1.6rem;
 }
