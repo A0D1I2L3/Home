@@ -426,7 +426,7 @@ h2 {
   .contact,
   .contact form {
     flex-direction: column;
-    max-width: 480px;
+    max-width: 95%;
     text-align: center;
   }
 }
