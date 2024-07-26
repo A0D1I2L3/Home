@@ -369,6 +369,9 @@ h2 {
   section {
     padding: 10rem 3% 2rem;
   }
+}.navbar {
+  display: flex;
+  justify-content: space-between; /* Center align elements on large screens */
 }
 @media (max-width: 1285px) {
   html {
@@ -388,10 +391,15 @@ h2 {
   }
 
   .navbar {
-    left: 0;
-    right: 0;
-    width: 100%;
-    text-align: center;
+    justify-content: center; 
+    flex-direction: row;
+    
+  }
+
+  .navbar a {
+    gap: 4rem;
+    margin: 1rem 4rem; 
+    font-size: 1.6rem; 
   }
 
   .home {
