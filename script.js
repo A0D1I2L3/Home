@@ -1,5 +1,5 @@
 document.getElementById("sendMail").addEventListener("click", function (event) {
-  event.preventDefault(); // Prevent the default form submission behavior
+  event.preventDefault(); // Prevent default form submission
 
   // Get form values
   const name = document.getElementById("name").value;
@@ -8,12 +8,23 @@ document.getElementById("sendMail").addEventListener("click", function (event) {
   const subject = document.getElementById("subject").value;
   const message = document.getElementById("message").value;
 
-  // Create Gmail compose URL
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=yoboihumantoo@gmail.com
-&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
-  )}`;
+  // Create content
+  const bodyContent = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
 
-  // Open Gmail compose window in a new popup
-  window.open(gmailUrl, "_blank", "width=800,height=600");
+  // Check if the user is on a mobile device
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // For mobile devices, use mailto
+    const mailtoUrl = `mailto:yoboihumantoo@gmail.com
+?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      bodyContent
+    )}`;
+    window.location.href = mailtoUrl;
+  } else {
+    // For desktops, use Gmail popup
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=yoboihumantoo@gmail.com
+&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+    window.open(gmailUrl, "_blank", "width=800,height=600");
+  }
 });
