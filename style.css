@@ -227,14 +227,10 @@ span {
 
 @keyframes words {
   0%,
-  20% {
-    content: "FullStack Dev";
-  }
-  21%,
-  40% {
+  30% {
     content: "Web Designer";
   }
-  41%,
+  31%,
   60% {
     content: "Pen Tester";
   }
