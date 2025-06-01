@@ -460,14 +460,13 @@ textarea:focus::placeholder {
 .pros {
   display: flex;
   flex-wrap: wrap;
-  margin: 5% auto;
-
+  margin: 3% auto;
   justify-content: space-between;
   gap: 20px;
 }
 
 .project-card {
-  flex: 1 1 300px;
+  flex: 1 1 250px;
   max-width: 45%;
   min-width: 280px;
   text-align: center;
@@ -496,12 +495,12 @@ textarea:focus::placeholder {
 }
 
 .project-title {
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 15px 0 10px 0;
 }
 
 .project-desc {
-  font-size: 1.5rem;
+  font-size: 1.3em;
   font-weight: 500;
   line-height: 1.8;
 }
@@ -509,7 +508,6 @@ textarea:focus::placeholder {
 .see-more-btn-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
 }
 
 @media (max-width: 900px) {
