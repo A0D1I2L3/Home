@@ -454,19 +454,23 @@ textarea:focus::placeholder {
 .projects {
   width: 100%;
   font-family: "Poppins", sans-serif;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pros {
   display: flex;
   flex-wrap: wrap;
-  margin: 3% auto;
-  justify-content: space-between;
+  margin: 4% auto;
+  justify-content: center;
   gap: 20px;
+  width: 100%;
+  max-width: 1400px;
 }
 
 .project-card {
-  flex: 1 1 250px;
+  flex: 1 1 300px;
   max-width: 45%;
   min-width: 280px;
   text-align: center;
