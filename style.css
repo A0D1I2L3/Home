@@ -149,7 +149,7 @@ span {
   background: var(--main-color);
   box-shadow: 0 0 25px var(--main-color);
   border-radius: 4rem;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: black;
   border: 2px solid transparent;
   letter-spacing: 0.1rem;
@@ -449,4 +449,85 @@ textarea:invalid:focus {
 input:focus::placeholder,
 textarea:focus::placeholder {
   color: transparent;
+}
+
+.projects {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+
+}
+
+.pros {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5% auto;
+
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.project-card {
+  flex: 1 1 300px;
+  max-width: 45%;
+  min-width: 280px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: 15px;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 16px;
+  transition: box-shadow 0.1s, transform 0.3s;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 10px var(--main-color), 0 0 30px var(--main-color);
+  transform: scale(1.01);
+  text-decoration: none;
+}
+
+.project-img {
+  object-fit:scale-down;
+  height: 300px;  
+}
+
+.project-title {
+  font-size: 2.5em;
+  margin: 15px 0 10px 0;
+}
+
+.project-desc {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.see-more-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .project-card {
+    max-width: 70%;
+  }
+  .pros {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pros {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-card {
+    max-width: 90%;
+    margin: 15px 0;
+  }
 }
