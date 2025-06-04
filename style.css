@@ -611,11 +611,10 @@ textarea:focus::placeholder {
   width: 32px;
   height: 32px;
   object-fit: contain;
-  filter: drop-shadow(0 0 1px #32cd32);
 }
 
 .skill-item:hover {
-  color: #7cfc00;
+  color: var(--main-color);
 }
 
 @media (max-width: 960px) {
