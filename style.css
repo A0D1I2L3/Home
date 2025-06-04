@@ -494,8 +494,8 @@ textarea:focus::placeholder {
 }
 
 .project-img {
-  object-fit:scale-down;
-  height: 300px;  
+  object-fit: scale-down;
+  height: 300px;
 }
 
 .project-title {
@@ -531,5 +531,126 @@ textarea:focus::placeholder {
   .project-card {
     max-width: 90%;
     margin: 15px 0;
+  }
+}
+
+.skills-section {
+  background-color: #000000;
+  padding: 6rem 8%;
+  margin-top: -3%;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.2rem;
+  color: white;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-box {
+  border: 3px solid var(--main-color);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  background: #121212;
+  transition: box-shadow 0.3s ease;
+  color: white;
+}
+
+.skill-box:hover {
+  box-shadow: 0 0 40px var(--main-color);
+}
+
+.skill-box h3 {
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem 2rem;
+  justify-content: center;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  user-select: none;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+.skill-item img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 1px #32cd32);
+}
+
+.skill-item:hover {
+  color: #7cfc00;
+}
+
+@media (max-width: 960px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem 0;
+  }
+
+  .skill-box {
+    width: 100%;
+    max-width: 600px;
+    min-height: 360px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 3.6rem;
+    margin-bottom: 3rem;
+  }
+
+  .skills-grid {
+    gap: 2.4rem 0;
+  }
+
+  .skill-box {
+    width: 100%;
+    max-width: 90%;
+    min-height: 200px;
+    padding: 2rem 1.5rem;
+  }
+
+  .skill-box h3 {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
   }
 }
