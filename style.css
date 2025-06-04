@@ -635,7 +635,8 @@ textarea:focus::placeholder {
 @media (max-width: 480px) {
   .section-title {
     font-size: 3.6rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    margin-top: 6rem;
   }
 
   .skills-grid {
