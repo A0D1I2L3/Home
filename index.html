@@ -15,6 +15,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
+     <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"
+      }
+    }
+  </script>
   </head>
   <body>
     <header class="header">
@@ -61,9 +69,7 @@
           <a href="#contact" class="btn">Contact</a>
         </div>
       </div>
-      <div class="home-img">
-        <img src="assets/photo.jpeg" oncontextmenu="return false;" />
-      </div>
+        <canvas id="cube"></canvas>
     </section>
 
     <section class="projects" id="projects">
@@ -279,5 +285,7 @@
     </section>
 
     <script src="script.js"></script>
+    <script type="module" src="cube.js"></script>
+
   </body>
 </html>

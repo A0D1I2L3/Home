@@ -659,3 +659,9 @@ textarea:focus::placeholder {
     margin-bottom: 2rem;
   }
 }
+
+#cube {
+  width: 30vw;
+  height: 100vh;
+  display: block;
+}
