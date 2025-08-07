@@ -540,7 +540,7 @@ textarea:focus::placeholder {
 }
 
 #cube {
-      width: min(90vw, 400px);
+      width: min(90vw, 500px);
       height: 100svh;
       display: block;
       touch-action: none;

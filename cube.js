@@ -44,20 +44,18 @@ camera.rotation.x = Math.PI / 12;
     );
 
     function resizeRendererToDisplaySize() {
-      const width = canvas.clientWidth;
-      const height = canvas.clientHeight;
-      const pixelRatio = window.devicePixelRatio;
-      const widthRes = Math.floor(width * pixelRatio);
-      const heightRes = Math.floor(height * pixelRatio);
+  const canvas = renderer.domElement;
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
+  const needResize = canvas.width !== width || canvas.height !== height;
 
-      const needResize = renderer.domElement.width !== widthRes || renderer.domElement.height !== heightRes;
+  if (needResize) {
+    renderer.setSize(width, height, false);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+  }
+}
 
-      if (needResize) {
-        renderer.setSize(width, height, false);
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-      }
-    }
 
     function render() {
       resizeRendererToDisplaySize();
