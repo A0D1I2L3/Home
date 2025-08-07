@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'https://unpkg.com/three@0.160.1/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'https://unpkg.com/three@0.160.1/examples/jsm/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'https://unpkg.com/three@0.160.1/examples/jsm/loaders/DRACOLoader.js';
 
 const canvas = document.getElementById('cube');
 const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
@@ -17,10 +18,13 @@ camera.rotation.x = Math.PI / 12;
 const hemiLight = new THREE.HemisphereLight(0xffffff, 0x41b06e, 1.5);
 scene.add(hemiLight);
 
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/'); 
+const loader = new GLTFLoader();
+loader.setDRACOLoader(dracoLoader); 
 let model = null;
 let controls = null;
 
-const loader = new GLTFLoader();
 loader.load(
   'assets/rubiks_cube.glb',
   (gltf) => {
@@ -33,7 +37,7 @@ loader.load(
     controls.minPolarAngle = Math.PI / 2;
     controls.maxPolarAngle = Math.PI / 2;
 
-    renderer.setAnimationLoop(render); 
+    renderer.setAnimationLoop(render);
   },
   undefined,
   (error) => {
