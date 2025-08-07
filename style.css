@@ -528,7 +528,7 @@ textarea:focus::placeholder {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .pros {
     flex-direction: column;
     align-items: center;
@@ -539,6 +539,19 @@ textarea:focus::placeholder {
   }
 }
 
+#cube {
+      width: min(90vw, 400px);
+      height: 100svh;
+      display: block;
+      touch-action: none;
+    }
+
+    @media (max-width: 900px) {
+      #cube {
+        width: 100vw;
+        height: 35vh;
+      }
+    }
 .skills-section {
   background-color: #000000;
   padding: 6rem 8%;
@@ -658,10 +671,4 @@ textarea:focus::placeholder {
     font-size: 2.4rem;
     margin-bottom: 2rem;
   }
-}
-
-#cube {
-  width: 30vw;
-  height: 100vh;
-  display: block;
 }

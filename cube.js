@@ -1,84 +1,72 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-const canvas = document.getElementById('cube');
+    import * as THREE from 'https://unpkg.com/three@0.160.1/build/three.module.js';
+    import { OrbitControls } from 'https://unpkg.com/three@0.160.1/examples/jsm/controls/OrbitControls.js';
+    import { GLTFLoader } from 'https://unpkg.com/three@0.160.1/examples/jsm/loaders/GLTFLoader.js';
 
-const renderer = new THREE.WebGLRenderer({
-  canvas,
-  antialias: true,
-  alpha: true
-});
-renderer.setClearColor(0x000000, 0);
-renderer.outputEncoding = THREE.sRGBEncoding;
+    const canvas = document.getElementById('cube');
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-const scene = new THREE.Scene();
-scene.background = null;
+    const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(
-  10,
-  canvas.clientWidth / canvas.clientHeight,
-  0.1,
-  100
-);
-camera.position.set(0, 1, 3);
+    const isMobile = window.innerWidth < 768;
+    const camera = new THREE.PerspectiveCamera(isMobile?5:10, window.innerWidth / window.innerHeight, 0.1, 100);
+camera.position.z = 3;
+camera.rotation.x = Math.PI / 12; 
 
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.1;
-controls.minDistance = 0.4;
-controls.maxDistance = 10;
-controls.enableZoom = false;
-controls.minPolarAngle = Math.PI / 2;
-controls.maxPolarAngle = Math.PI / 2;
 
-const ambientLight = new THREE.AmbientLight(0x41b06e, 1.2);
-scene.add(ambientLight);
+    const controls = new OrbitControls(camera, canvas);
+    controls.enableZoom = false;
+    controls.enablePan = false;
+    controls.minPolarAngle = Math.PI / 2;
+    controls.maxPolarAngle = Math.PI / 2;
 
-const ambientLight2 = new THREE.HemisphereLight(0xffffff, 1);
-scene.add(ambientLight2);
+    const lightColor = 0x41b06e;
 
-const loader = new GLTFLoader();
-let model = null;
+    const hemiLight1 = new THREE.HemisphereLight(0xffffff, lightColor, 1.2);
+    const hemiLight2 = new THREE.HemisphereLight(lightColor, 0xffffff, 1.2);
+    scene.add(hemiLight1, hemiLight2);
 
-loader.load(
-  'assets/rubiks_cube.glb',
-  (gltf) => {
-    model = gltf.scene;
-    model.scale.set(1, 1, 1);
-    scene.add(model);
-  },
-  undefined,
-  (error) => {
-    console.error('Model loading error:', error);
-  }
-);
+    let model = null;
+    const loader = new GLTFLoader();
 
-const clock = new THREE.Clock();
+    loader.load(
+      'assets/rubiks_cube.glb', 
+      (gltf) => {
+        model = gltf.scene;
+        scene.add(model);
+      },
+      undefined,
+      (error) => {
+        console.error('Error loading model:', error);
+      }
+    );
 
-function resizeRendererToDisplaySize() {
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
-  const needResize = canvas.width !== width || canvas.height !== height;
-  if (needResize) {
-    renderer.setSize(width, height, false);
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-  }
-}
+    function resizeRendererToDisplaySize() {
+      const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
+      const pixelRatio = window.devicePixelRatio;
+      const widthRes = Math.floor(width * pixelRatio);
+      const heightRes = Math.floor(height * pixelRatio);
 
-function animate() {
-  requestAnimationFrame(animate);
+      const needResize = renderer.domElement.width !== widthRes || renderer.domElement.height !== heightRes;
 
-  resizeRendererToDisplaySize();
+      if (needResize) {
+        renderer.setSize(width, height, false);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+      }
+    }
 
-  if (model) {
-    model.rotation.y += 0.01;
-    model.rotation.x += 0.01; 
-  }
+    function render() {
+      resizeRendererToDisplaySize();
+      if (model) {
+        model.rotation.y += 0.01;
+        model.rotation.x += 0.01;
+      }
+      renderer.render(scene, camera);
+      requestAnimationFrame(render);
+    }
 
-  controls.update();
-  renderer.render(scene, camera);
-}
-
-animate();
+    render();
